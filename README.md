@@ -83,3 +83,19 @@ mvn clean package heroku:deploy
 
 
 Note that if `-Dserver.port=$PORT` is not provided in <processType>, then `Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch` will be occured
+
+## Using Database (ClearDB MySql) on Heroku
+```sh
+heroku addons:create cleardb:ignite
+```
+or
+```
+You can find and configure ClearDB MySql from Heroku web console by enering 'ClearDB' into Add-ons search field
+```
+then
+```sh
+heroku config | grep CLEARDB_DATABASE_URL
+
+CLEARDB_DATABASE_URL: mysql://adffdadf2341:adf4234@us-cdbr-east.cleardb.com/heroku_db?reconnect=true
+```
+Above url, `adffdadf2341` is username, `adf4234` is password for MySql
