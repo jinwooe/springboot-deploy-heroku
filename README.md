@@ -38,6 +38,8 @@ pom.xml
 </build>
 ```
 
+Before bulding the application, you need `Heroku CLI` installed. You can download `Heroku CLI` (here)[https://devcenter.heroku.com/articles/heroku-cli]
+
 ```sh
 mvn clean package heroku:deploy
 ```
