@@ -4,31 +4,38 @@
 ```xml
 pom.xml
 
+<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<java.version>1.8</java.version>
+	<full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
+</properties>
+
 ...
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>1.2.0</version>
-				<configuration>
-					<appName>jade-firstapp</appName>
-					<includeTarget>false</includeTarget>
-					<includes>
-						<include>${basedir}/${full-artifact-name}</include>
-					</includes>
-					<jdkVersion>1.8</jdkVersion>
-					<processTypes>
-						<web>java $JAVA_OPTS -Dserver.port=$PORT -jar ${full-artifact-name}</web>
-					</processTypes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>com.heroku.sdk</groupId>
+			<artifactId>heroku-maven-plugin</artifactId>
+			<version>1.2.0</version>
+			<configuration>
+				<appName>jade-firstapp</appName>
+				<includeTarget>false</includeTarget>
+				<includes>
+					<include>${basedir}/${full-artifact-name}</include>
+				</includes>
+				<jdkVersion>1.8</jdkVersion>
+				<processTypes>
+					<web>java $JAVA_OPTS -Dserver.port=$PORT -jar ${full-artifact-name}</web>
+				</processTypes>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 ```
 
 ```sh
