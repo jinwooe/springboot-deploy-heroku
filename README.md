@@ -41,5 +41,40 @@ pom.xml
 ```sh
 mvn clean package heroku:deploy
 ```
+```
+....
+
+[INFO] -----> Packaging application...
+[INFO]        - app: jade-firstapp
+[INFO]        - including: target/heroku-app-demo-0.0.1-SNAPSHOT.jar
+[INFO] -----> Creating build...
+[INFO]        - file: target/heroku/slug.tgz
+[INFO]        - size: 12MB
+[INFO] -----> Uploading build...
+[INFO]        - success
+[INFO] -----> Deploying...
+[INFO] remote: 
+[INFO] remote: -----> heroku-maven-plugin app detected
+[INFO] remote: -----> Installing OpenJDK 1.8... done
+[INFO] remote: -----> Discovering process types
+[INFO] remote:        Procfile declares types -> web
+[INFO] remote: 
+[INFO] remote: -----> Compressing...
+[INFO] remote:        Done: 60.7M
+[INFO] remote: -----> Launching...
+[INFO] remote:        Released v6
+[INFO] remote:        https://jade-firstapp.herokuapp.com/ deployed to Heroku
+[INFO] remote: 
+[INFO] -----> Done
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:10 min
+[INFO] Finished at: 2017-08-17T17:58:01+09:00
+[INFO] Final Memory: 42M/464M
+[INFO] ------------------------------------------------------------------------
+
+```
+
 
 Note that if `-Dserver.port=$PORT` is not provided in <processType>, then `Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch` will be occured
