@@ -89,9 +89,9 @@ Note that if `-Dserver.port=$PORT` is not provided in <processType>, then `Error
 heroku addons:create cleardb:ignite
 ```
 or
-```
+
 You can find and configure ClearDB MySql from Heroku web console by enering 'ClearDB' into Add-ons search field
-```
+
 then
 ```sh
 heroku config | grep CLEARDB_DATABASE_URL
