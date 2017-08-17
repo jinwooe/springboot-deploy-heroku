@@ -1,4 +1,5 @@
-# springboot-deploy-heroku
+# Spring Boot Application Deploy on Heroku
+## Using Maven plugin and fat jar
 
 ```xml
 pom.xml
@@ -33,3 +34,5 @@ pom.xml
 ```sh
 mvn clean package heroku:deploy
 ```
+
+Note that if `-Dserver.port=$PORT` is not provided in <processType>, then `Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch` will be occured
